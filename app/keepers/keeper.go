@@ -67,7 +67,7 @@ import (
 	psmtypes "github.com/onomyprotocol/reserve/x/psm/types"
 	vaultstypes "github.com/onomyprotocol/reserve/x/vaults/types"
 
-	oracle "github.com/onomyprotocol/reserve/x/oracle"
+	// oracle "github.com/onomyprotocol/reserve/x/oracle/module"
 	psm "github.com/onomyprotocol/reserve/x/psm/module"
 )
 
@@ -99,6 +99,7 @@ type AppKeepers struct {
 	// make scoped keepers public for test purposes.
 	ScopedIBCKeeper      capabilitykeeper.ScopedKeeper
 	ScopedTransferKeeper capabilitykeeper.ScopedKeeper
+	ScopedOracle         capabilitykeeper.ScopedKeeper
 
 	// Modules.
 	TransferModule transfer.AppModule
@@ -163,6 +164,7 @@ func NewAppKeeper(
 
 	appKeepers.ScopedIBCKeeper = appKeepers.CapabilityKeeper.ScopeToModule(ibcexported.ModuleName)
 	appKeepers.ScopedTransferKeeper = appKeepers.CapabilityKeeper.ScopeToModule(ibctransfertypes.ModuleName)
+	appKeepers.ScopedOracle = appKeepers.CapabilityKeeper.ScopeToModule(oracletypes.ModuleName)
 
 	// Applications that wish to enforce statically created ScopedKeepers should call `Seal` after creating
 	// their scoped modules in `NewApp` with `ScopeToModule`.
@@ -308,7 +310,6 @@ func NewAppKeeper(
 		AddRoute(paramproposal.RouterKey, params.NewParamChangeProposalHandler(appKeepers.ParamsKeeper)).
 		AddRoute(ibcclienttypes.RouterKey, ibcclient.NewClientProposalHandler(appKeepers.IBCKeeper.ClientKeeper)).
 		AddRoute(psmtypes.RouterKey, psm.NewPSMProposalHandler(&appKeepers.PSMKeeper)).
-		AddRoute(oracletypes.RouterKey, oracle.NewOracleProposalHandler(appKeepers.OracleMockKeeper)).
 		AddRoute(vaultstypes.RouterKey, vaults.NewVaultsProposalHandler(&appKeepers.VaultsKeeper))
 
 	// Set legacy router for backwards compatibility with gov v1beta1.
@@ -344,9 +345,11 @@ func NewAppKeeper(
 		appCodec,
 		runtime.NewKVStoreService(appKeepers.keys[oracletypes.ModuleName]),
 		logger,
+		appKeepers.AccountKeeper,
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
-		// appKeepers.GetIBCKeeper,
-		// appKeepers.GetScopedIBCKeeper,
+		appKeepers.IBCKeeper.ChannelKeeper,
+		appKeepers.IBCKeeper.PortKeeper,
+		appKeepers.ScopedOracle,
 	)
 
 	appKeepers.PSMKeeper = psmKeeper.NewKeeper(
