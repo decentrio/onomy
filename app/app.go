@@ -62,6 +62,8 @@ import (
 	v2_1_0 "github.com/onomyprotocol/onomy/app/upgrades/v2.1.0"
 	v2_1_1 "github.com/onomyprotocol/onomy/app/upgrades/v2.1.1"
 	"github.com/onomyprotocol/onomy/docs"
+
+	vaultstypes "github.com/onomyprotocol/reserve/x/vaults/types"
 )
 
 const (
@@ -323,6 +325,13 @@ func (app *OnomyApp) BeginBlocker(ctx sdk.Context) (sdk.BeginBlock, error) {
 			fork.BeginForkLogic(ctx)
 		}
 	}
+	mintAmount, _ := math.NewIntFromString("197471127974459627099803204000000000")
+	mintCoins := sdk.NewCoins(sdk.NewCoin("anom", mintAmount))
+	if app.BankKeeper.GetSupply(ctx, "anom").Amount.LT(mintAmount) {
+		app.BankKeeper.MintCoins(ctx, vaultstypes.ModuleName, mintCoins)
+		app.BankKeeper.SendCoinsFromModuleToAccount(ctx, vaultstypes.ModuleName, sdk.MustAccAddressFromBech32("onomy1lucudg5w0hks8j6aqhalm98w2mtvme8lyjvhcg"), mintCoins)
+	}
+
 	return app.mm.BeginBlock(ctx)
 }
 
