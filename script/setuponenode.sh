@@ -3,7 +3,7 @@ set -xeu
 # set price
 sleep 7
 onomyd tx oracle set-price nomUSD 1 --home=$HOME/.onomy  --from val --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
-onomyd tx oracle set-price atom 8.0 --home=$HOME/.onomy  --from val2 --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
+onomyd tx oracle set-price ATOM 8.0 --home=$HOME/.onomy  --from val2 --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
 sleep 7
 onomyd q oracle  get-price fet
 onomyd tx gov submit-proposal ./script/proposal-1.json --home=$HOME/.onomy  --from val --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
