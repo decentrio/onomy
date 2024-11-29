@@ -7,11 +7,11 @@
     "min_collateral_ratio": "8",
     "liquidation_ratio":"7",
     "max_debt":"1000000000000000000000000000",
-    "collateral_oracl_script": "44",
+    "collaterale_oracl_script": "44",
     "mint_denom": "nomUSD",
     "mint_symbol":"USD",
     "stability_fee": "0.1",
-    "mint_oracl_script": 44
+    "mint_oracle_script": 44
   },
   {
     "@type": "/reserve.vaults.MsgActiveCollateral",
@@ -21,11 +21,11 @@
     "min_collateral_ratio": "0.5",
     "liquidation_ratio":"0.5",
     "max_debt":"1000000000000000000000000000",
-    "collateral_oracl_script": "44",
+    "collaterale_oracl_script": "44",
     "mint_denom": "nomUSD",
     "mint_symbol":"USD",
     "stability_fee": "0.1",
-    "mint_oracl_script": 44
+    "mint_oracle_script": 44
   }],
   "deposit": "100000000stake",
   "title": "My proposal",
