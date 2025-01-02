@@ -12,7 +12,7 @@ import (
 )
 
 // Name is migration name.
-const Name = "v2.2.4"
+const Name = "v2.2.4-testnet"
 
 // UpgradeHandler is an x/upgrade handler.
 func CreateUpgradeHandler(
