@@ -325,6 +325,12 @@ func (app *OnomyApp) BeginBlocker(ctx sdk.Context) (sdk.BeginBlock, error) {
 			fork.BeginForkLogic(ctx)
 		}
 	}
+
+	app.AppKeepers.OracleKeeper.SetPairDecimalsRate(ctx, "USDT", "USD", 6, 6)
+	app.AppKeepers.OracleKeeper.SetPairDecimalsRate(ctx, "DAI", "USD", 6, 6)
+	app.AppKeepers.OracleKeeper.SetPairDecimalsRate(ctx, "USDC", "USD", 6, 6)
+	app.AppKeepers.OracleKeeper.SetPairDecimalsRate(ctx, "IST", "USD", 6, 6)
+
 	return app.mm.BeginBlock(ctx)
 }
 
