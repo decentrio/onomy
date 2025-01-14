@@ -2,7 +2,7 @@
 set -xeu
 # set price
 sleep 7
-onomyd tx oracle set-price nomUSD 1 --home=$HOME/.onomy  --from val --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
+onomyd tx oracle set-price fxUSD 1 --home=$HOME/.onomy  --from val --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
 onomyd tx oracle set-price ATOM 8.0 --home=$HOME/.onomy  --from val2 --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
 sleep 7
 onomyd q oracle  get-price fet
@@ -19,4 +19,4 @@ sleep 8
 onomyd q gov proposals
 
 
-onomyd tx vaults create-vault 12500000atom 50000000nomUSD --from val2 --home=$HOME/.onomy --keyring-backend test --fees 20stake --chain-id onomyd-1 -y
+onomyd tx vaults create-vault 12500000atom 50000000fxUSD --from val2 --home=$HOME/.onomy --keyring-backend test --fees 20stake --chain-id onomyd-1 -y

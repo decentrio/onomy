@@ -1,11 +1,11 @@
 onomyd tx oracle set-price ATOM 8.0 --home=$HOME/.onomyd/validator3  --from validator3 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
-onomyd tx vaults create-vault 12500000atom 50000000nomUSD --from test2 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
-# onomyd tx vaults create-vault 10000000atom 20000000nomUSD --from validator2 --home=$HOME/.onomyd/validator2 --keyring-backend test --fees 20stake --chain-id testing-1 -y
+onomyd tx vaults create-vault 12500000atom 50000000fxUSD --from test2 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
+# onomyd tx vaults create-vault 10000000atom 20000000fxUSD --from validator2 --home=$HOME/.onomyd/validator2 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
 # sleep 7
 
-# onomyd tx vaults mint 0 20000000nomUSD --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
+# onomyd tx vaults mint 0 20000000fxUSD --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
 # sleep 7 
 
@@ -17,7 +17,7 @@ onomyd tx vaults create-vault 12500000atom 50000000nomUSD --from test2 --home=$H
 
 # sleep 7
 
-# onomyd tx vaults repay 0 40000000nomUSD --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
+# onomyd tx vaults repay 0 40000000fxUSD --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
 sleep 7
 

@@ -8,7 +8,7 @@
     "liquidation_ratio":"7",
     "max_debt":"1000000000000000000000000000",
     "collateral_oracle_script": "44",
-    "mint_denom": "nomUSD",
+    "mint_denom": "fxUSD",
     "mint_symbol":"USD",
     "stability_fee": "0.1",
     "mint_oracle_script": 44
@@ -22,7 +22,7 @@
     "liquidation_ratio":"1.5",
     "max_debt":"1000000000000000000000000000",
     "collateral_oracle_script": "44",
-    "mint_denom": "nomUSD",
+    "mint_denom": "fxUSD",
     "mint_symbol":"USD",
     "stability_fee": "0.1",
     "mint_oracle_script": 44
