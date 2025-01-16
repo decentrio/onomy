@@ -2,7 +2,7 @@
 set -xeu
 # set price
 sleep 7
-onomyd tx gov submit-proposal ./script/proposal-1.json --home=$HOME/.onomyd/validator1  --from validator1 --keyring-backend test --fees 30stake --chain-id testing-1 -y --gas 300000
+onomyd tx gov submit-proposal ./script/proposal-1.json --home=$HOME/.onomyd/validator1  --from validator1 --keyring-backend test --fees 40stake --chain-id testing-1 -y --gas 400000
 # vote∑
 sleep 7
 onomyd tx gov vote 1 yes  --from validator1 --keyring-backend test --home ~/.onomyd/validator1 --chain-id testing-1 -y --fees 20stake
