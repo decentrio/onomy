@@ -25,15 +25,15 @@ onomyd q bank balances $(onomyd keys show test2 -a --keyring-backend test --home
 
 onomyd tx oracle set-price ATOM 5 --home=$HOME/.onomyd/validator1  --from validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
-# sleep 31
+sleep 31
 # onomyd q bank balances $(onomyd keys show test1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a)
 
-# onomyd tx auction bid 0 15000000fxUSD 6.0 --from test1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
+onomyd tx auction bid 0 15000000fxUSD 1.2 --from test1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
-# sleep 7
+sleep 7
 
 # echo "I will buy all the remaining"
-# onomyd tx auction bid 0 60000000fxUSD 5.0 --from test3 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
+onomyd tx auction bid 0 60000000fxUSD 1.0 --from test3 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id testing-1 -y
 
 # echo "wating long time, query auction ratecurrent = 1.1...liquidate"
 # # onomyd tx aution 

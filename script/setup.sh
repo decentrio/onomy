@@ -23,6 +23,6 @@ echo $test3 | onomyd keys add test3 --recover --keyring-backend=test --home=$HOM
 
 sleep 7
 
-onomyd tx bank multi-send $( onomyd keys show validator1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test2 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test3 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) 100000000000fxUSD,10000stake,100000000atom,100000000000fxJPY,100000000000fxEUR,12500000000000000000000anom --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 30stake --gas 300000 --chain-id testing-1 -y
+onomyd tx bank multi-send $( onomyd keys show validator1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test2 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test3 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) 100000000000fxUSD,10000stake,100000000atom,100000000000fxJPY,100000000000fxEUR,1500000000000000000000000anom --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 30stake --gas 300000 --chain-id testing-1 -y
 sleep 8
 onomyd q gov proposals
