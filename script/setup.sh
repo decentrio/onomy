@@ -2,12 +2,12 @@
 set -xeu
 # set price
 sleep 7
-onomyd tx gov submit-proposal ./script/proposal-1.json --home=$HOME/.onomyd/validator1  --from validator1 --keyring-backend test --fees 40stake --chain-id testing-1 -y --gas 400000
+onomyd tx gov submit-proposal ./script/proposal-1.json --home=$HOME/.onomyd/validator1  --from validator1 --keyring-backend test --fees 50stake --chain-id onomy-mainnet-1 -y --gas 500000
 # vote∑
 sleep 7
-onomyd tx gov vote 1 yes  --from validator1 --keyring-backend test --home ~/.onomyd/validator1 --chain-id testing-1 -y --fees 20stake
-onomyd tx gov vote 1 yes  --from validator2 --keyring-backend test --home ~/.onomyd/validator2 --chain-id testing-1 -y --fees 20stake
-onomyd tx gov vote 1 yes  --from validator3 --keyring-backend test --home ~/.onomyd/validator3 --chain-id testing-1 -y --fees 20stake
+onomyd tx gov vote 1 yes  --from validator1 --keyring-backend test --home ~/.onomyd/validator1 --chain-id onomy-mainnet-1 -y --fees 20stake
+onomyd tx gov vote 1 yes  --from validator2 --keyring-backend test --home ~/.onomyd/validator2 --chain-id onomy-mainnet-1 -y --fees 20stake
+onomyd tx gov vote 1 yes  --from validator3 --keyring-backend test --home ~/.onomyd/validator3 --chain-id onomy-mainnet-1 -y --fees 20stake
 
 # wait voting_perio=15s
 echo "========sleep=========="
@@ -23,6 +23,6 @@ echo $test3 | onomyd keys add test3 --recover --keyring-backend=test --home=$HOM
 
 sleep 7
 
-onomyd tx bank multi-send $( onomyd keys show validator1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test2 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test3 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) 100000000000fxUSD,10000stake,100000000atom,100000000000fxJPY,100000000000fxEUR,1500000000000000000000000anom --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 30stake --gas 300000 --chain-id testing-1 -y
+onomyd tx bank multi-send $( onomyd keys show validator1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test2 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) $( onomyd keys show test3 --home=$HOME/.onomyd/validator1  --keyring-backend test -a) 100000000000fxUSD,10000stake,100000000atom,100000000000fxJPY,100000000000fxEUR,1500000000000000000000000anom --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 30stake --gas 300000 --chain-id onomy-mainnet-1 -y
 sleep 8
 onomyd q gov proposals

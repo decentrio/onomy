@@ -11,9 +11,9 @@ mkdir $HOME/.onomyd/validator2
 mkdir $HOME/.onomyd/validator3
 
 # init all three validators
-onomyd init --chain-id=testing-1 validator1 --home=$HOME/.onomyd/validator1
-onomyd init --chain-id=testing-1 validator2 --home=$HOME/.onomyd/validator2
-onomyd init --chain-id=testing-1 validator3 --home=$HOME/.onomyd/validator3
+onomyd init --chain-id onomy-mainnet-1 validator1 --home=$HOME/.onomyd/validator1
+onomyd init --chain-id onomy-mainnet-1 validator2 --home=$HOME/.onomyd/validator2
+onomyd init --chain-id onomy-mainnet-1 validator3 --home=$HOME/.onomyd/validator3
 
 # create keys for all three validators
 mnemonic1="ozone unfold device pave lemon potato omit insect column wise cover hint narrow large provide kidney episode clay notable milk mention dizzy muffin crazy"
@@ -36,9 +36,9 @@ onomyd genesis add-genesis-account $(onomyd keys show validator3 -a --keyring-ba
 onomyd genesis add-genesis-account $(onomyd keys show validator1 -a --keyring-backend=test --home=$HOME/.onomyd/validator1) 10000000000000000000000000000000stake,10000000000000000000000000000000anom,10000000000000000000000000000000fxUSD,10000000000000000000000000000000atom,10000000000000000000000000000000fxJPY,10000000000000000000000000000000fxEUR --home=$HOME/.onomyd/validator3 
 onomyd genesis add-genesis-account $(onomyd keys show validator2 -a --keyring-backend=test --home=$HOME/.onomyd/validator2) 10000000000000000000000000000000stake,10000000000000000000000000000000anom,10000000000000000000000000000000fxUSD,10000000000000000000000000000000atom,10000000000000000000000000000000fxJPY,10000000000000000000000000000000fxEUR --home=$HOME/.onomyd/validator3 
 onomyd genesis add-genesis-account $(onomyd keys show validator3 -a --keyring-backend=test --home=$HOME/.onomyd/validator3) 10000000000000000000000000000000stake,10000000000000000000000000000000anom,10000000000000000000000000000000fxUSD,10000000000000000000000000000000atom,10000000000000000000000000000000fxJPY,10000000000000000000000000000000fxEUR --home=$HOME/.onomyd/validator3 
-onomyd genesis gentx validator1 1000000000000000000000stake --keyring-backend=test --home=$HOME/.onomyd/validator1 --chain-id=testing-1
-onomyd genesis gentx validator2 1000000000000000000000stake --keyring-backend=test --home=$HOME/.onomyd/validator2 --chain-id=testing-1
-onomyd genesis gentx validator3 1000000000000000000000stake --keyring-backend=test --home=$HOME/.onomyd/validator3 --chain-id=testing-1
+onomyd genesis gentx validator1 1000000000000000000000stake --keyring-backend=test --home=$HOME/.onomyd/validator1 --chain-id onomy-mainnet-1
+onomyd genesis gentx validator2 1000000000000000000000stake --keyring-backend=test --home=$HOME/.onomyd/validator2 --chain-id onomy-mainnet-1
+onomyd genesis gentx validator3 1000000000000000000000stake --keyring-backend=test --home=$HOME/.onomyd/validator3 --chain-id onomy-mainnet-1
 
 cp $HOME/.onomyd/validator2/config/gentx/*.json $HOME/.onomyd/validator1/config/gentx/
 cp $HOME/.onomyd/validator3/config/gentx/*.json $HOME/.onomyd/validator1/config/gentx/
