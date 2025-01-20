@@ -5,23 +5,6 @@ sleep 7
 onomyd tx oracle set-price NOM 0.1 --from test2 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
 sleep 7
 onomyd tx vaults create-vault 5000000000000000000000anom 50000000fxUSD --from test2 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
-# onomyd tx vaults create-vault 10000000atom 20000000fxUSD --from validator2 --home=$HOME/.onomyd/validator2 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
-
-# sleep 7
-
-# onomyd tx vaults mint 0 20000000fxUSD --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
-
-# sleep 7 
-
-# onomyd tx vaults deposit 0 20000000atom --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
-
-# sleep 7
-
-# onomyd tx vaults withdraw 0 1000atom --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
-
-# sleep 7
-
-# onomyd tx vaults repay 0 40000000fxUSD --from validator1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
 
 sleep 7
 

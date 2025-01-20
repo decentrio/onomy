@@ -324,6 +324,11 @@ func (app *OnomyApp) BeginBlocker(ctx sdk.Context) (sdk.BeginBlock, error) {
 			fork.BeginForkLogic(ctx)
 		}
 	}
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
+	fmt.Println(app.AppKeepers.VaultsKeeper.ShortfallAmount.Get(ctx, "fxEUR"))
+	fmt.Println()
 	return app.mm.BeginBlock(ctx)
 }
 
