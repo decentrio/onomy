@@ -1,6 +1,5 @@
-rm -rf $HOME/.onomyd
-cp -r $HOME/1/.onomyd $HOME/
+rm -rf $HOME/.onomy
+cp -r $HOME/4/.onomy $HOME/
 
-onomyd start --home=$HOME/.onomyd/validator1 &
-onomyd start --home=$HOME/.onomyd/validator2 &
-onomyd start --home=$HOME/.onomyd/validator3
+sleep 2
+onomyd start
