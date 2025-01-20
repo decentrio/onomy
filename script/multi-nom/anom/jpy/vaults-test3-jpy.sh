@@ -1,7 +1,3 @@
-onomyd tx oracle set-price NOM 0.03 --from test2 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 30stake --chain-id onomy-mainnet-1 -y --gas 300000
-
-sleep 7
-
 onomyd tx vaults create-vault 15000000000000000000000anom 7575000000fxJPY --from test2 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 30stake --chain-id onomy-mainnet-1 -y --gas 300000
 
 sleep 7
@@ -13,12 +9,12 @@ onomyd tx oracle set-price NOM 0.02 --home=$HOME/.onomyd/validator1  --from vali
 sleep 31
 # onomyd q bank balances $(onomyd keys show test1 --home=$HOME/.onomyd/validator1  --keyring-backend test -a)
 
-onomyd tx auction bid 0 2272000000fxJPY 1.2 --from test1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
+# onomyd tx auction bid 0 2272000000fxJPY 1.2 --from test1 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
 
-sleep 7
+# sleep 7
 
 echo "I will buy all the remaining"
-onomyd tx auction bid 0 9088000000fxJPY 1 --from test3 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
+onomyd tx auction bid 0 7575000000fxJPY 1 --from test3 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
 
 echo "wating long time, query auction ratecurrent = 1.1...liquidate"
 # onomyd tx aution 

@@ -18,7 +18,7 @@ onomyd tx auction bid 0 2272000000fxJPY 1.2 --from test1 --home=$HOME/.onomyd/va
 sleep 7
 
 echo "I will buy all the remaining"
-onomyd tx auction bid 0 9088000000fxJPY 1 --from test3 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
+onomyd tx auction bid 0 7575000000fxJPY 1 --from test3 --home=$HOME/.onomyd/validator1 --keyring-backend test --fees 20stake --chain-id onomy-mainnet-1 -y
 
 echo "wating long time, query auction ratecurrent = 1.1...liquidate"
 # onomyd tx aution 
