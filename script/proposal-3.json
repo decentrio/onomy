@@ -2,7 +2,8 @@
     "messages": [  {
       "@type": "/reserve.vaults.MsgBurnShortfall",
       "authority":"onomy10d07y265gmmuvt4z0w9aw880jnsr700jqr8n8k",
-      "mint_denom": "fxJPY"
+      "mint_denom": "fxJPY",
+      "amount":"1000000000"
     }
    ],
     "deposit": "100000000stake",
